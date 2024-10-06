@@ -124,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="loading-packages" class="level1">
 <h1>Loading packages</h1>
-<div id="a14286a1" class="cell" data-execution_count="1">
+<div id="ea1e7455" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotnine <span class="im">as</span> p9 </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> ggplot, geom_point, aes, stat_smooth, facet_wrap, labs</span>
@@ -133,10 +133,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="data" class="level1">
 <h1>Data</h1>
-<div id="0f1447cd" class="cell" data-execution_count="2">
+<div id="051b7141" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> load_penguins()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>penguins.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <div>
 
 
@@ -221,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Data Visualisation with <code>plotnine</code></h1>
 <section id="step-1-take-data-and-obtain-a-canvas-for-plotting" class="level2">
 <h2 class="anchored" data-anchor-id="step-1-take-data-and-obtain-a-canvas-for-plotting">Step 1: Take data and obtain a canvas for plotting</h2>
-<div id="17100344" class="cell" data-execution_count="3">
+<div id="01ef339b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ggplot(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -234,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-2-defining-aesthetics" class="level2">
 <h2 class="anchored" data-anchor-id="step-2-defining-aesthetics">Step 2: Defining Aesthetics</h2>
-<div id="0a78f628" class="cell" data-execution_count="4">
+<div id="310684ac" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ggplot(penguins, aes(<span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>, color<span class="op">=</span><span class="st">"factor(species)"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -247,7 +247,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-3-add-gemetries" class="level2">
 <h2 class="anchored" data-anchor-id="step-3-add-gemetries">Step 3: Add Gemetries</h2>
-<div id="6eb0b2e6" class="cell" data-execution_count="5">
+<div id="fadba684" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ggplot(penguins, aes(<span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>, color<span class="op">=</span><span class="st">"factor(species)"</span>)) <span class="op">+</span>  geom_point()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:364: PlotnineWarning: geom_point : Removed 2 rows containing missing values.</code></pre>
@@ -263,7 +263,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="step-4-create-the-plot-with-customized-axis-labels" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-create-the-plot-with-customized-axis-labels">Step 4: Create the plot with customized axis labels</h2>
-<div id="fc7ddd0a" class="cell" data-execution_count="6">
+<div id="7dd29121" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ggplot(penguins, aes(<span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>, color<span class="op">=</span><span class="st">"factor(species)"</span>)) <span class="op">+</span>  geom_point()  <span class="op">+</span> labs(x<span class="op">=</span><span class="st">"Bill Length (mm)"</span>, y<span class="op">=</span><span class="st">"Bill Depth (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:364: PlotnineWarning: geom_point : Removed 2 rows containing missing values.</code></pre>
@@ -272,6 +272,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div>
 <figure class="figure">
 <p><img src="index_files/figure-html/cell-7-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="change-themes" class="level1">
+<h1>Change themes</h1>
+<section id="without-customized-themes" class="level2">
+<h2 class="anchored" data-anchor-id="without-customized-themes">Without customized themes</h2>
+<div id="345ee2d8" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>p9.ggplot(data<span class="op">=</span>penguins,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>           mapping<span class="op">=</span>p9.aes(x<span class="op">=</span><span class="st">'factor(species)'</span>)) <span class="op">+</span> p9.geom_bar() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="with-customized-themes" class="level2">
+<h2 class="anchored" data-anchor-id="with-customized-themes">With customized themes</h2>
+<div id="33e5f6ed" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>p9.ggplot(data<span class="op">=</span>penguins,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>           mapping<span class="op">=</span>p9.aes(x<span class="op">=</span><span class="st">'factor(species)'</span>)) <span class="op">+</span> p9.geom_bar() <span class="op">+</span> p9.theme_bw() <span class="op">+</span> p9.theme(axis_text_x <span class="op">=</span> p9.element_text(angle<span class="op">=</span><span class="dv">90</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-9-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="faceting" class="level1">
+<h1>Faceting</h1>
+<section id="without-faceting" class="level2">
+<h2 class="anchored" data-anchor-id="without-faceting">Without faceting</h2>
+<div id="cebb8856" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ggplot(penguins, aes(<span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>, color<span class="op">=</span><span class="st">"factor(species)"</span>)) <span class="op">+</span>  geom_point()  <span class="op">+</span> labs(x<span class="op">=</span><span class="st">"Bill Length (mm)"</span>, y<span class="op">=</span><span class="st">"Bill Depth (mm)"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:364: PlotnineWarning: geom_point : Removed 2 rows containing missing values.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-10-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="with-faceting" class="level2">
+<h2 class="anchored" data-anchor-id="with-faceting">With faceting</h2>
+<div id="73250679" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ggplot(penguins, aes(<span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>, color<span class="op">=</span><span class="st">"factor(species)"</span>)) <span class="op">+</span>  geom_point()  <span class="op">+</span> labs(x<span class="op">=</span><span class="st">"Bill Length (mm)"</span>, y<span class="op">=</span><span class="st">"Bill Depth (mm)"</span>) <span class="op">+</span> facet_wrap(<span class="st">"species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:364: PlotnineWarning: geom_point : Removed 2 rows containing missing values.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-11-output-2.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>

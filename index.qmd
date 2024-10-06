@@ -9,20 +9,20 @@ jupyter: python3
 
 # Set up
 
-1. Install Python on your machine.
+1.  Install Python on your machine.
 
-2. Install Quarto
+2.  Install Quarto
 
-3. Go to cmd and type
+3.  Go to cmd and type
 
-    - `py --version`
-    
-    - `py -m pip install pandas plotly statsmodels`
-    
-    - `py -m pip install palmerpenguins`
-    
-    - `py -m pip install plotnine`
-    
+    -   `py --version`
+
+    -   `py -m pip install pandas plotly statsmodels`
+
+    -   `py -m pip install palmerpenguins`
+
+    -   `py -m pip install plotnine`
+
     Note: The reason for typing `py -m` instead of just `pip` install is to avoid issues where you might have multiple versions of Python installed, and pip could be tied to the wrong version. By running `py -m pip`, you're explicitly telling the Python launcher to use the right Python interpreter and its associated pip.
 
 # Loading packages
@@ -50,15 +50,13 @@ ggplot(penguins)
 
 ```
 
-## Step 2:  Defining Aesthetics 
-
+## Step 2: Defining Aesthetics
 
 ```{python}
 ggplot(penguins, aes("bill_length_mm", "bill_depth_mm", color="factor(species)"))
 ```
 
 ## Step 3: Add Gemetries
-
 
 ```{python}
 ggplot(penguins, aes("bill_length_mm", "bill_depth_mm", color="factor(species)")) +  geom_point()
@@ -69,3 +67,36 @@ ggplot(penguins, aes("bill_length_mm", "bill_depth_mm", color="factor(species)")
 ```{python}
 ggplot(penguins, aes("bill_length_mm", "bill_depth_mm", color="factor(species)")) +  geom_point()  + labs(x="Bill Length (mm)", y="Bill Depth (mm)")
 ```
+
+# Change themes
+
+## Without customized themes
+
+```{python}
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)')) + p9.geom_bar() 
+```
+
+## With customized themes
+
+```{python}
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)')) + p9.geom_bar() + p9.theme_bw() + p9.theme(axis_text_x = p9.element_text(angle=90))
+```
+
+# Faceting
+
+## Without faceting
+
+```{python}
+ggplot(penguins, aes("bill_length_mm", "bill_depth_mm", color="factor(species)")) +  geom_point()  + labs(x="Bill Length (mm)", y="Bill Depth (mm)") 
+
+```
+
+## With faceting
+
+```{python}
+ggplot(penguins, aes("bill_length_mm", "bill_depth_mm", color="factor(species)")) +  geom_point()  + labs(x="Bill Length (mm)", y="Bill Depth (mm)") + facet_wrap("species")
+
+```
+
