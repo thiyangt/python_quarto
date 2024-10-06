@@ -30,6 +30,7 @@ jupyter: python3
 ```{python}
 import pandas as pd
 import plotnine as p9 
+from plotnine import ggplot, geom_point, aes, stat_smooth, facet_wrap, labs
 from palmerpenguins import load_penguins
 ```
 
@@ -38,4 +39,33 @@ from palmerpenguins import load_penguins
 ```{python}
 penguins = load_penguins()
 penguins.head()
+```
+
+# Data Visualisation with `plotnine`
+
+## Step 1: Take data and obtain a canvas for plotting
+
+```{python}
+ggplot(penguins)
+
+```
+
+## Step 2:  Defining Aesthetics 
+
+
+```{python}
+ggplot(penguins, aes("bill_length_mm", "bill_depth_mm", color="factor(species)"))
+```
+
+## Step 3: Add Gemetries
+
+
+```{python}
+ggplot(penguins, aes("bill_length_mm", "bill_depth_mm", color="factor(species)")) +  geom_point()
+```
+
+## Step 4: Create the plot with customized axis labels
+
+```{python}
+ggplot(penguins, aes("bill_length_mm", "bill_depth_mm", color="factor(species)")) +  geom_point()  + labs(x="Bill Length (mm)", y="Bill Depth (mm)")
 ```
