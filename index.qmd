@@ -1,0 +1,41 @@
+---
+title: "Reproducible Documentation with Quarto"
+subtitle: "Manual for Python Users"
+author: "Dr Thiyanga S. Talagala"
+format: html
+editor: visual
+jupyter: python3
+---
+
+# Set up
+
+1. Install Python on your machine.
+
+2. Install Quarto
+
+3. Go to cmd and type
+
+    - `py --version`
+    
+    - `py -m pip install pandas plotly statsmodels`
+    
+    - `py -m pip install palmerpenguins`
+    
+    - `py -m pip install plotnine`
+    
+    Note: The reason for typing `py -m` instead of just `pip` install is to avoid issues where you might have multiple versions of Python installed, and pip could be tied to the wrong version. By running `py -m pip`, you're explicitly telling the Python launcher to use the right Python interpreter and its associated pip.
+
+# Loading packages
+
+```{python}
+import pandas as pd
+import plotnine as p9 
+from palmerpenguins import load_penguins
+```
+
+# Data
+
+```{python}
+penguins = load_penguins()
+penguins.head()
+```
