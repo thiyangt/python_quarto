@@ -159,3 +159,4 @@ p9.ggplot(data=penguins,
 p9.ggplot(data=penguins,
            mapping=p9.aes(x='factor(species)', y='bill_length_mm', color='factor(species)')) + p9.geom_boxplot(outlier_shape = "None")+ p9.geom_jitter()
 ```
+
