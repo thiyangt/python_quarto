@@ -133,3 +133,29 @@ p9.ggplot(data=penguins,
 
 # Working with chunk options
 
+## echo: false
+
+```{python}
+#| echo: false
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)', y='bill_length_mm', color='factor(species)')) + p9.geom_boxplot(outlier_shape = "None")+ p9.geom_jitter()
+```
+
+## fig-cap
+
+```{python}
+#| echo: false
+#| fig-cap: "Distribution of Bill length by Species"
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)', y='bill_length_mm', color='factor(species)')) + p9.geom_boxplot(outlier_shape = "None")+ p9.geom_jitter()
+```
+
+## fig width
+
+```{python}
+#| echo: false
+#| fig-cap: "Distribution of Bill length by Species"
+#| fig-width: 8
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)', y='bill_length_mm', color='factor(species)')) + p9.geom_boxplot(outlier_shape = "None")+ p9.geom_jitter()
+```
