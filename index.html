@@ -75,40 +75,92 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </head>
 
-<body class="fullcontent">
+<body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Reproducible Documentation with Quarto</h1>
+            <p class="subtitle lead">Manual for Python Users</p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
 
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Reproducible Documentation with Quarto</h1>
-<p class="subtitle lead">Manual for Python Users</p>
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Dr Thiyanga S. Talagala </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#set-up" id="toc-set-up" class="nav-link active" data-scroll-target="#set-up"><span class="header-section-number">1</span> Set up</a></li>
+  <li><a href="#loading-packages" id="toc-loading-packages" class="nav-link" data-scroll-target="#loading-packages"><span class="header-section-number">2</span> Loading packages</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">3</span> Data</a></li>
+  <li><a href="#data-visualisation-with-plotnine" id="toc-data-visualisation-with-plotnine" class="nav-link" data-scroll-target="#data-visualisation-with-plotnine"><span class="header-section-number">4</span> Data Visualisation with <code>plotnine</code></a>
+  <ul class="collapse">
+  <li><a href="#step-1-take-data-and-obtain-a-canvas-for-plotting" id="toc-step-1-take-data-and-obtain-a-canvas-for-plotting" class="nav-link" data-scroll-target="#step-1-take-data-and-obtain-a-canvas-for-plotting"><span class="header-section-number">4.1</span> Step 1: Take data and obtain a canvas for plotting</a></li>
+  <li><a href="#step-2-defining-aesthetics" id="toc-step-2-defining-aesthetics" class="nav-link" data-scroll-target="#step-2-defining-aesthetics"><span class="header-section-number">4.2</span> Step 2: Defining Aesthetics</a></li>
+  <li><a href="#step-3-add-gemetries" id="toc-step-3-add-gemetries" class="nav-link" data-scroll-target="#step-3-add-gemetries"><span class="header-section-number">4.3</span> Step 3: Add Gemetries</a></li>
+  <li><a href="#step-4-create-the-plot-with-customized-axis-labels" id="toc-step-4-create-the-plot-with-customized-axis-labels" class="nav-link" data-scroll-target="#step-4-create-the-plot-with-customized-axis-labels"><span class="header-section-number">4.4</span> Step 4: Create the plot with customized axis labels</a></li>
+  </ul></li>
+  <li><a href="#change-themes" id="toc-change-themes" class="nav-link" data-scroll-target="#change-themes"><span class="header-section-number">5</span> Change themes</a>
+  <ul class="collapse">
+  <li><a href="#without-customized-themes" id="toc-without-customized-themes" class="nav-link" data-scroll-target="#without-customized-themes"><span class="header-section-number">5.1</span> Without customized themes</a></li>
+  <li><a href="#with-customized-themes" id="toc-with-customized-themes" class="nav-link" data-scroll-target="#with-customized-themes"><span class="header-section-number">5.2</span> With customized themes</a></li>
+  </ul></li>
+  <li><a href="#faceting" id="toc-faceting" class="nav-link" data-scroll-target="#faceting"><span class="header-section-number">6</span> Faceting</a>
+  <ul class="collapse">
+  <li><a href="#without-faceting" id="toc-without-faceting" class="nav-link" data-scroll-target="#without-faceting"><span class="header-section-number">6.1</span> Without faceting</a></li>
+  <li><a href="#with-faceting" id="toc-with-faceting" class="nav-link" data-scroll-target="#with-faceting"><span class="header-section-number">6.2</span> With faceting</a></li>
+  </ul></li>
+  <li><a href="#other-geoms" id="toc-other-geoms" class="nav-link" data-scroll-target="#other-geoms"><span class="header-section-number">7</span> Other geoms</a>
+  <ul class="collapse">
+  <li><a href="#geom_boxplot" id="toc-geom_boxplot" class="nav-link" data-scroll-target="#geom_boxplot"><span class="header-section-number">7.1</span> geom_boxplot</a></li>
+  <li><a href="#geom_jitter" id="toc-geom_jitter" class="nav-link" data-scroll-target="#geom_jitter"><span class="header-section-number">7.2</span> geom_jitter</a></li>
+  <li><a href="#geom_boxplot-geom_jitter" id="toc-geom_boxplot-geom_jitter" class="nav-link" data-scroll-target="#geom_boxplot-geom_jitter"><span class="header-section-number">7.3</span> geom_boxplot + geom_jitter</a></li>
+  <li><a href="#to-remove-outliers-from-the-boxplot-in-your-ggplot-code" id="toc-to-remove-outliers-from-the-boxplot-in-your-ggplot-code" class="nav-link" data-scroll-target="#to-remove-outliers-from-the-boxplot-in-your-ggplot-code"><span class="header-section-number">7.4</span> To remove outliers from the boxplot in your ggplot code</a></li>
+  </ul></li>
+  <li><a href="#working-with-chunk-options" id="toc-working-with-chunk-options" class="nav-link" data-scroll-target="#working-with-chunk-options"><span class="header-section-number">8</span> Working with chunk options</a>
+  <ul class="collapse">
+  <li><a href="#echo-false" id="toc-echo-false" class="nav-link" data-scroll-target="#echo-false"><span class="header-section-number">8.1</span> echo: false</a></li>
+  <li><a href="#fig-cap" id="toc-fig-cap" class="nav-link" data-scroll-target="#fig-cap"><span class="header-section-number">8.2</span> fig-cap</a></li>
+  <li><a href="#fig-width" id="toc-fig-width" class="nav-link" data-scroll-target="#fig-width"><span class="header-section-number">8.3</span> fig width</a></li>
+  <li><a href="#suprress-warnings-and-messages" id="toc-suprress-warnings-and-messages" class="nav-link" data-scroll-target="#suprress-warnings-and-messages"><span class="header-section-number">8.4</span> Suprress warnings and messages</a></li>
+  <li><a href="#fenced-echo" id="toc-fenced-echo" class="nav-link" data-scroll-target="#fenced-echo"><span class="header-section-number">8.5</span> Fenced Echo</a></li>
+  <li><a href="#output-and-code-overflow" id="toc-output-and-code-overflow" class="nav-link" data-scroll-target="#output-and-code-overflow"><span class="header-section-number">8.6</span> <code>output</code> and <code>code-overflow</code></a></li>
+  </ul></li>
+  <li><a href="#highlighting" id="toc-highlighting" class="nav-link" data-scroll-target="#highlighting"><span class="header-section-number">9</span> Highlighting</a></li>
+  <li><a href="#themes" id="toc-themes" class="nav-link" data-scroll-target="#themes"><span class="header-section-number">10</span> Themes</a></li>
+  <li><a href="#folding-code" id="toc-folding-code" class="nav-link" data-scroll-target="#folding-code"><span class="header-section-number">11</span> Folding Code</a></li>
+  <li><a href="#folding-code-with-code-summary" id="toc-folding-code-with-code-summary" class="nav-link" data-scroll-target="#folding-code-with-code-summary"><span class="header-section-number">12</span> Folding Code with <code>code-summary</code></a></li>
+  <li><a href="#code-overflow" id="toc-code-overflow" class="nav-link" data-scroll-target="#code-overflow"><span class="header-section-number">13</span> Code-overflow</a></li>
+  <li><a href="#table-of-content" id="toc-table-of-content" class="nav-link" data-scroll-target="#table-of-content"><span class="header-section-number">14</span> Table of content</a></li>
+  <li><a href="#title-banner" id="toc-title-banner" class="nav-link" data-scroll-target="#title-banner"><span class="header-section-number">15</span> Title banner</a></li>
+  <li><a href="#word-document-output" id="toc-word-document-output" class="nav-link" data-scroll-target="#word-document-output"><span class="header-section-number">16</span> Word document output</a></li>
+  </ul>
+</nav>
 </div>
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
-<div class="quarto-title-meta">
-
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Dr Thiyanga S. Talagala </p>
-          </div>
-  </div>
-    
-  
-    
-  </div>
-  
 
 
-</header>
-
-
-<section id="set-up" class="level1">
-<h1>Set up</h1>
+<section id="set-up" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Set up</h1>
 <ol type="1">
 <li><p>Install Python on your machine.</p></li>
 <li><p>Install Quarto</p></li>
@@ -122,18 +174,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Note: The reason for typing <code>py -m</code> instead of just <code>pip</code> install is to avoid issues where you might have multiple versions of Python installed, and pip could be tied to the wrong version. By running <code>py -m pip</code>, you’re explicitly telling the Python launcher to use the right Python interpreter and its associated pip.</p></li>
 </ol>
 </section>
-<section id="loading-packages" class="level1">
-<h1>Loading packages</h1>
-<div id="f8f98e90" class="cell" data-execution_count="1">
+<section id="loading-packages" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Loading packages</h1>
+<div id="5e11f4ee" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotnine <span class="im">as</span> p9 </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotnine <span class="im">import</span> ggplot, geom_point, aes, stat_smooth, facet_wrap, labs</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> palmerpenguins <span class="im">import</span> load_penguins</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="data" class="level1">
-<h1>Data</h1>
-<div id="15cd20bf" class="cell" data-execution_count="2">
+<section id="data" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Data</h1>
+<div id="01531bf0" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> load_penguins()</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>penguins.head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
@@ -217,11 +269,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="data-visualisation-with-plotnine" class="level1">
-<h1>Data Visualisation with <code>plotnine</code></h1>
-<section id="step-1-take-data-and-obtain-a-canvas-for-plotting" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-take-data-and-obtain-a-canvas-for-plotting">Step 1: Take data and obtain a canvas for plotting</h2>
-<div id="f4d0f06d" class="cell" data-execution_count="3">
+<section id="data-visualisation-with-plotnine" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Data Visualisation with <code>plotnine</code></h1>
+<section id="step-1-take-data-and-obtain-a-canvas-for-plotting" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="step-1-take-data-and-obtain-a-canvas-for-plotting"><span class="header-section-number">4.1</span> Step 1: Take data and obtain a canvas for plotting</h2>
+<div id="0f5538f6" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>ggplot(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -232,9 +284,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="step-2-defining-aesthetics" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-defining-aesthetics">Step 2: Defining Aesthetics</h2>
-<div id="842e405e" class="cell" data-execution_count="4">
+<section id="step-2-defining-aesthetics" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="step-2-defining-aesthetics"><span class="header-section-number">4.2</span> Step 2: Defining Aesthetics</h2>
+<div id="bf0dd28e" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>ggplot(penguins, aes(<span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>, color<span class="op">=</span><span class="st">"factor(species)"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -245,9 +297,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="step-3-add-gemetries" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-add-gemetries">Step 3: Add Gemetries</h2>
-<div id="8d66df3b" class="cell" data-execution_count="5">
+<section id="step-3-add-gemetries" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="step-3-add-gemetries"><span class="header-section-number">4.3</span> Step 3: Add Gemetries</h2>
+<div id="41780b7a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ggplot(penguins, aes(<span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>, color<span class="op">=</span><span class="st">"factor(species)"</span>)) <span class="op">+</span>  geom_point()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:364: PlotnineWarning: geom_point : Removed 2 rows containing missing values.</code></pre>
@@ -261,9 +313,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="step-4-create-the-plot-with-customized-axis-labels" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-create-the-plot-with-customized-axis-labels">Step 4: Create the plot with customized axis labels</h2>
-<div id="2846c9da" class="cell" data-execution_count="6">
+<section id="step-4-create-the-plot-with-customized-axis-labels" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="step-4-create-the-plot-with-customized-axis-labels"><span class="header-section-number">4.4</span> Step 4: Create the plot with customized axis labels</h2>
+<div id="2e4c3e42" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>ggplot(penguins, aes(<span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>, color<span class="op">=</span><span class="st">"factor(species)"</span>)) <span class="op">+</span>  geom_point()  <span class="op">+</span> labs(x<span class="op">=</span><span class="st">"Bill Length (mm)"</span>, y<span class="op">=</span><span class="st">"Bill Depth (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:364: PlotnineWarning: geom_point : Removed 2 rows containing missing values.</code></pre>
@@ -278,11 +330,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="change-themes" class="level1">
-<h1>Change themes</h1>
-<section id="without-customized-themes" class="level2">
-<h2 class="anchored" data-anchor-id="without-customized-themes">Without customized themes</h2>
-<div id="d61e93ae" class="cell" data-execution_count="7">
+<section id="change-themes" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Change themes</h1>
+<section id="without-customized-themes" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="without-customized-themes"><span class="header-section-number">5.1</span> Without customized themes</h2>
+<div id="bc01fa56" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>p9.ggplot(data<span class="op">=</span>penguins,</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>           mapping<span class="op">=</span>p9.aes(x<span class="op">=</span><span class="st">'factor(species)'</span>)) <span class="op">+</span> p9.geom_bar() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -294,9 +346,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="with-customized-themes" class="level2">
-<h2 class="anchored" data-anchor-id="with-customized-themes">With customized themes</h2>
-<div id="7b1c9570" class="cell" data-execution_count="8">
+<section id="with-customized-themes" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="with-customized-themes"><span class="header-section-number">5.2</span> With customized themes</h2>
+<div id="bb6d6bfd" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>p9.ggplot(data<span class="op">=</span>penguins,</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>           mapping<span class="op">=</span>p9.aes(x<span class="op">=</span><span class="st">'factor(species)'</span>)) <span class="op">+</span> p9.geom_bar() <span class="op">+</span> p9.theme_bw() <span class="op">+</span> p9.theme(axis_text_x <span class="op">=</span> p9.element_text(angle<span class="op">=</span><span class="dv">90</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -309,11 +361,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="faceting" class="level1">
-<h1>Faceting</h1>
-<section id="without-faceting" class="level2">
-<h2 class="anchored" data-anchor-id="without-faceting">Without faceting</h2>
-<div id="7e2c8309" class="cell" data-execution_count="9">
+<section id="faceting" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Faceting</h1>
+<section id="without-faceting" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="without-faceting"><span class="header-section-number">6.1</span> Without faceting</h2>
+<div id="3d96a1b9" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>ggplot(penguins, aes(<span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>, color<span class="op">=</span><span class="st">"factor(species)"</span>)) <span class="op">+</span>  geom_point()  <span class="op">+</span> labs(x<span class="op">=</span><span class="st">"Bill Length (mm)"</span>, y<span class="op">=</span><span class="st">"Bill Depth (mm)"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:364: PlotnineWarning: geom_point : Removed 2 rows containing missing values.</code></pre>
@@ -327,9 +379,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="with-faceting" class="level2">
-<h2 class="anchored" data-anchor-id="with-faceting">With faceting</h2>
-<div id="ba70c22c" class="cell" data-execution_count="10">
+<section id="with-faceting" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="with-faceting"><span class="header-section-number">6.2</span> With faceting</h2>
+<div id="07692d8c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ggplot(penguins, aes(<span class="st">"bill_length_mm"</span>, <span class="st">"bill_depth_mm"</span>, color<span class="op">=</span><span class="st">"factor(species)"</span>)) <span class="op">+</span>  geom_point()  <span class="op">+</span> labs(x<span class="op">=</span><span class="st">"Bill Length (mm)"</span>, y<span class="op">=</span><span class="st">"Bill Depth (mm)"</span>) <span class="op">+</span> facet_wrap(<span class="st">"species"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:364: PlotnineWarning: geom_point : Removed 2 rows containing missing values.</code></pre>
@@ -344,11 +396,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="other-geoms" class="level1">
-<h1>Other geoms</h1>
-<section id="geom_boxplot" class="level2">
-<h2 class="anchored" data-anchor-id="geom_boxplot">geom_boxplot</h2>
-<div id="a4dc1736" class="cell" data-execution_count="11">
+<section id="other-geoms" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Other geoms</h1>
+<section id="geom_boxplot" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="geom_boxplot"><span class="header-section-number">7.1</span> geom_boxplot</h2>
+<div id="ad7172af" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>p9.ggplot(data<span class="op">=</span>penguins,</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>           mapping<span class="op">=</span>p9.aes(x<span class="op">=</span><span class="st">'factor(species)'</span>, y<span class="op">=</span><span class="st">'bill_length_mm'</span>)) <span class="op">+</span> p9.geom_boxplot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -363,9 +415,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="geom_jitter" class="level2">
-<h2 class="anchored" data-anchor-id="geom_jitter">geom_jitter</h2>
-<div id="2e9a8ad3" class="cell" data-execution_count="12">
+<section id="geom_jitter" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="geom_jitter"><span class="header-section-number">7.2</span> geom_jitter</h2>
+<div id="ba69d8c7" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>p9.ggplot(data<span class="op">=</span>penguins,</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>           mapping<span class="op">=</span>p9.aes(x<span class="op">=</span><span class="st">'factor(species)'</span>, y<span class="op">=</span><span class="st">'bill_length_mm'</span>)) <span class="op">+</span> p9.geom_jitter()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -380,9 +432,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="geom_boxplot-geom_jitter" class="level2">
-<h2 class="anchored" data-anchor-id="geom_boxplot-geom_jitter">geom_boxplot + geom_jitter</h2>
-<div id="26c10065" class="cell" data-execution_count="13">
+<section id="geom_boxplot-geom_jitter" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="geom_boxplot-geom_jitter"><span class="header-section-number">7.3</span> geom_boxplot + geom_jitter</h2>
+<div id="99b47278" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>p9.ggplot(data<span class="op">=</span>penguins,</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>           mapping<span class="op">=</span>p9.aes(x<span class="op">=</span><span class="st">'factor(species)'</span>, y<span class="op">=</span><span class="st">'bill_length_mm'</span>, color<span class="op">=</span><span class="st">'factor(species)'</span>)) <span class="op">+</span> p9.geom_boxplot()<span class="op">+</span> p9.geom_jitter()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -398,9 +450,9 @@ C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine
 </div>
 </div>
 </section>
-<section id="to-remove-outliers-from-the-boxplot-in-your-ggplot-code" class="level2">
-<h2 class="anchored" data-anchor-id="to-remove-outliers-from-the-boxplot-in-your-ggplot-code">To remove outliers from the boxplot in your ggplot code</h2>
-<div id="db79a0d1" class="cell" data-execution_count="14">
+<section id="to-remove-outliers-from-the-boxplot-in-your-ggplot-code" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="to-remove-outliers-from-the-boxplot-in-your-ggplot-code"><span class="header-section-number">7.4</span> To remove outliers from the boxplot in your ggplot code</h2>
+<div id="7a0b18cc" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>p9.ggplot(data<span class="op">=</span>penguins,</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>           mapping<span class="op">=</span>p9.aes(x<span class="op">=</span><span class="st">'factor(species)'</span>, y<span class="op">=</span><span class="st">'bill_length_mm'</span>, color<span class="op">=</span><span class="st">'factor(species)'</span>)) <span class="op">+</span> p9.geom_boxplot(outlier_shape <span class="op">=</span> <span class="st">"None"</span>)<span class="op">+</span> p9.geom_jitter()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -417,11 +469,11 @@ C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine
 </div>
 </section>
 </section>
-<section id="working-with-chunk-options" class="level1">
-<h1>Working with chunk options</h1>
-<section id="echo-false" class="level2">
-<h2 class="anchored" data-anchor-id="echo-false">echo: false</h2>
-<div id="1b4b661a" class="cell" data-execution_count="15">
+<section id="working-with-chunk-options" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Working with chunk options</h1>
+<section id="echo-false" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="echo-false"><span class="header-section-number">8.1</span> echo: false</h2>
+<div id="867dde76" class="cell" data-execution_count="15">
 <div class="cell-output cell-output-stderr">
 <pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:284: PlotnineWarning: stat_boxplot : Removed 2 rows containing non-finite values.
 C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:364: PlotnineWarning: geom_jitter : Removed 2 rows containing missing values.</code></pre>
@@ -435,9 +487,9 @@ C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine
 </div>
 </div>
 </section>
-<section id="fig-cap" class="level2">
-<h2 class="anchored" data-anchor-id="fig-cap">fig-cap</h2>
-<div id="4f9a3f81" class="cell" data-execution_count="16">
+<section id="fig-cap" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="fig-cap"><span class="header-section-number">8.2</span> fig-cap</h2>
+<div id="3a94e4b7" class="cell" data-execution_count="16">
 <div class="cell-output cell-output-stderr">
 <pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:284: PlotnineWarning: stat_boxplot : Removed 2 rows containing non-finite values.
 C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:364: PlotnineWarning: geom_jitter : Removed 2 rows containing missing values.</code></pre>
@@ -452,9 +504,9 @@ C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine
 </div>
 </div>
 </section>
-<section id="fig-width" class="level2">
-<h2 class="anchored" data-anchor-id="fig-width">fig width</h2>
-<div id="6e0cfb40" class="cell" data-fig-width="8" data-execution_count="17">
+<section id="fig-width" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="fig-width"><span class="header-section-number">8.3</span> fig width</h2>
+<div id="991d4689" class="cell" data-fig-width="8" data-execution_count="17">
 <div class="cell-output cell-output-stderr">
 <pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:284: PlotnineWarning: stat_boxplot : Removed 2 rows containing non-finite values.
 C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:364: PlotnineWarning: geom_jitter : Removed 2 rows containing missing values.</code></pre>
@@ -469,6 +521,142 @@ C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine
 </div>
 </div>
 </section>
+<section id="suprress-warnings-and-messages" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="suprress-warnings-and-messages"><span class="header-section-number">8.4</span> Suprress warnings and messages</h2>
+<div id="e2e1fd08" class="cell" data-fig-width="8" data-message="false" data-execution_count="18">
+<div class="cell-output cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
+<figcaption>Distribution of Bill length by Species</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="fenced-echo" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="fenced-echo"><span class="header-section-number">8.5</span> Fenced Echo</h2>
+<div id="25b9a5f4" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="in">1 + 1</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="19">
+<pre><code>2</code></pre>
+</div>
+</div>
+<div id="28ee28f5" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="20">
+<pre><code>2</code></pre>
+</div>
+</div>
+</section>
+<section id="output-and-code-overflow" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="output-and-code-overflow"><span class="header-section-number">8.6</span> <code>output</code> and <code>code-overflow</code></h2>
+<div id="d7cbe1cc" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode markdown code-overflow-wrap code-with-copy"><code class="sourceCode markdown"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| output: false</span></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="in">#| code-overflow: wrap</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="in">1 + 1</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="43de393f" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-overflow-wrap code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+<section id="highlighting" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Highlighting</h1>
+<div class="sourceCode" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="themes" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Themes</h1>
+<pre class="{yaml}"><code>format:
+  html:
+    theme: united</code></pre>
+<pre class="{yaml}"><code>format:
+  html: 
+    theme: cosmo
+    fontsize: 1.1em
+    linestretch: 1.7</code></pre>
+<pre class="{yaml}"><code>format:
+  html: 
+    theme: darkly</code></pre>
+</section>
+<section id="folding-code" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Folding Code</h1>
+<div id="e35363ed" class="cell" data-execution_count="23">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>p9.ggplot(data<span class="op">=</span>penguins,</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>           mapping<span class="op">=</span>p9.aes(x<span class="op">=</span><span class="st">'factor(species)'</span>, y<span class="op">=</span><span class="st">'bill_length_mm'</span>, color<span class="op">=</span><span class="st">'factor(species)'</span>)) <span class="op">+</span> p9.geom_boxplot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:284: PlotnineWarning: stat_boxplot : Removed 2 rows containing non-finite values.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-24-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="folding-code-with-code-summary" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Folding Code with <code>code-summary</code></h1>
+<div id="7bc8bb49" class="cell" data-execution_count="24">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>p9.ggplot(data<span class="op">=</span>penguins,</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>           mapping<span class="op">=</span>p9.aes(x<span class="op">=</span><span class="st">'factor(species)'</span>, y<span class="op">=</span><span class="st">'bill_length_mm'</span>, color<span class="op">=</span><span class="st">'factor(species)'</span>)) <span class="op">+</span> p9.geom_boxplot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:284: PlotnineWarning: stat_boxplot : Removed 2 rows containing non-finite values.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-25-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="code-overflow" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Code-overflow</h1>
+<div id="c7a6818c" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-overflow-wrap code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>p9.ggplot(data<span class="op">=</span>penguins,</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>           mapping<span class="op">=</span>p9.aes(x<span class="op">=</span><span class="st">'factor(species)'</span>, y<span class="op">=</span><span class="st">'bill_length_mm'</span>, color<span class="op">=</span><span class="st">'factor(species)'</span>)) <span class="op">+</span> p9.geom_boxplot()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\DELL\AppData\Local\Programs\Python\Python312\Lib\site-packages\plotnine\layer.py:284: PlotnineWarning: stat_boxplot : Removed 2 rows containing non-finite values.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/cell-26-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="table-of-content" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> Table of content</h1>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>toc: true</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>toc<span class="op">-</span>depth: <span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="title-banner" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Title banner</h1>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>title<span class="op">-</span>block<span class="op">-</span>banner: true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="word-document-output" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Word document output</h1>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="bu">format</span>:</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  docx:</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>    number<span class="op">-</span>sections: true</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>    number<span class="op">-</span>offset: <span class="dv">2</span></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>    number<span class="op">-</span>depth: <span class="dv">3</span></span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    highlight<span class="op">-</span>style: github</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 </main>

@@ -3,6 +3,10 @@ title: "Reproducible Documentation with Quarto"
 subtitle: "Manual for Python Users"
 author: "Dr Thiyanga S. Talagala"
 format: html
+number-sections: true
+toc: true
+toc-depth: 2
+title-block-banner: true
 editor: visual
 jupyter: python3
 ---
@@ -131,6 +135,7 @@ p9.ggplot(data=penguins,
            mapping=p9.aes(x='factor(species)', y='bill_length_mm', color='factor(species)')) + p9.geom_boxplot(outlier_shape = "None")+ p9.geom_jitter()
 ```
 
+
 # Working with chunk options
 
 ## echo: false
@@ -160,3 +165,122 @@ p9.ggplot(data=penguins,
            mapping=p9.aes(x='factor(species)', y='bill_length_mm', color='factor(species)')) + p9.geom_boxplot(outlier_shape = "None")+ p9.geom_jitter()
 ```
 
+## Suprress warnings and messages
+
+
+```{python}
+#| echo: false
+#| fig-cap: "Distribution of Bill length by Species"
+#| fig-width: 8
+#| warning: false
+#| message: false
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)', y='bill_length_mm', color='factor(species)')) + p9.geom_boxplot(outlier_shape = "None")+ p9.geom_jitter()
+```
+
+## Fenced Echo
+
+
+```{python}
+#| echo: fenced
+1 + 1
+```
+
+
+```{python}
+1 + 1
+```
+
+##  `output` and `code-overflow`
+
+```{python}
+#| echo: fenced
+#| output: false
+#| code-overflow: wrap
+1 + 1
+```
+
+```{python}
+#| output: false
+#| code-overflow: wrap
+1 + 1
+```
+
+# Highlighting
+
+```python
+1 + 1
+```
+
+# Themes
+
+
+```{yaml}
+format:
+  html:
+    theme: united
+```
+
+```{yaml}
+format:
+  html: 
+    theme: cosmo
+    fontsize: 1.1em
+    linestretch: 1.7
+```
+
+```{yaml}
+format:
+  html: 
+    theme: darkly
+```
+
+# Folding Code
+
+```{python}
+#| code-fold: true
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)', y='bill_length_mm', color='factor(species)')) + p9.geom_boxplot()
+```
+
+# Folding Code with `code-summary`
+
+```{python}
+#| code-fold: true
+#| code-summary: "Show the code"
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)', y='bill_length_mm', color='factor(species)')) + p9.geom_boxplot()
+```
+
+# Code-overflow
+
+```{python}
+#| code-overflow: wrap
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)', y='bill_length_mm', color='factor(species)')) + p9.geom_boxplot()
+```
+
+# Table of content
+
+```python
+toc: true
+toc-depth: 2
+
+```
+
+# Title banner
+
+```python
+title-block-banner: true
+```
+
+# Word document output
+
+```python
+format:
+  docx:
+    number-sections: true
+    number-offset: 2
+    number-depth: 3
+    highlight-style: github
+```
