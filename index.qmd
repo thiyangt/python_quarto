@@ -100,3 +100,36 @@ ggplot(penguins, aes("bill_length_mm", "bill_depth_mm", color="factor(species)")
 
 ```
 
+
+# Other geoms
+
+## geom_boxplot
+
+```{python}
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)', y='bill_length_mm')) + p9.geom_boxplot()
+```
+
+## geom_jitter
+
+```{python}
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)', y='bill_length_mm')) + p9.geom_jitter()
+```
+
+## geom_boxplot + geom_jitter
+
+```{python}
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)', y='bill_length_mm', color='factor(species)')) + p9.geom_boxplot()+ p9.geom_jitter()
+```
+
+## To remove outliers from the boxplot in your ggplot code
+
+```{python}
+p9.ggplot(data=penguins,
+           mapping=p9.aes(x='factor(species)', y='bill_length_mm', color='factor(species)')) + p9.geom_boxplot(outlier_shape = "None")+ p9.geom_jitter()
+```
+
+# Working with chunk options
+
